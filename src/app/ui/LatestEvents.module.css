@@ -1,0 +1,18 @@
+.latest {
+    h2 {
+        font-size: 3.1rem;
+        font-weight: 500;
+        margin-block-end: 2rem;
+        font-family: var(--font-lora);
+    }
+}
+
+.list {
+    display: flex;
+    gap: 2rem;
+    flex-direction: column;
+
+    li {
+        list-style-type: none;
+    }
+}

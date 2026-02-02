@@ -1,0 +1,36 @@
+.placeTeaser {
+    font-family: var(--font-open-sans);
+    font-size: 1.4rem;
+    font-weight: 500;
+    position: relative;
+    display: flex;
+
+    img {
+        max-width: 100%;
+    }
+
+    span {
+        font-size: 1.6rem;
+        font-family: var(--font-lora);
+        line-height: 1.6;
+        background: var(--place-preview-bg);
+        display: block;
+        padding: 1rem;
+        position: absolute;
+        inset-block-end: 0;
+        inset-inline-end: 0;
+        inset-inline-start: 0;
+    }
+
+    .wrapper {
+        position: relative;
+
+        &:before {
+            content: "";
+            box-shadow: var(--image-card-border);
+            position: absolute;
+            inset: 0;
+            z-index: 9;
+        }
+    }
+}

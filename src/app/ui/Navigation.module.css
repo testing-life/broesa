@@ -1,0 +1,65 @@
+.navigation {
+    --ulPositionRight: -80%;
+    background: var(--main-nav-bg);
+    font-weight: 600;
+    font-size: 2rem;
+    padding: 2.1rem 0;
+
+    &.isOpen {
+        --ulPositionRight: 0;
+    }
+
+    .logo,
+    .logo img {
+        width: 32px;
+        height: 32px;
+    }
+
+    div {
+        inline-size: 100%;
+        max-inline-size: var(--max-width);
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        @media (width < 50rem) {
+            ul {
+                flex-direction: column;
+                position: fixed;
+                width: 80%;
+                transition: 0.25s ease-in-out;
+                background: var(--mobile-bg);
+                top: 0;
+                right: var(--ulPositionRight);
+                height: 100%;
+                padding: 1rem;
+                z-index: 9;
+            }
+        }
+    }
+
+    .iconBtn {
+        background: transparent;
+        border: none;
+        color: var(--text-bg);
+        padding: 1rem;        
+    }
+
+    ul {
+        display: flex;
+        gap: 30px;
+    }
+
+    a {
+        padding: 0.2rem 1.4rem;
+    }
+
+    .current-link,
+    a:hover,
+    a:focus {
+        border-radius: 100rem;
+        background: var(--highlight);
+        padding: 0.2rem 1.4rem;
+    }
+}

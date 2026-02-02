@@ -1,0 +1,86 @@
+:root {
+  --white: 252, 255, 250;
+  --black: 23, 23, 23;
+  --vibrant-orange: 252, 148, 17;
+  --soft-yellow: 252, 206, 149;
+  --ivory-white: 252, 255, 250;
+  --dark-brown: 90, 83, 64;
+  --medium-brown: 114, 84, 52;
+  --burnt-orange: 149, 100, 60;
+  --deep-brown: 56, 44, 32;
+  --golden-orange: 196, 115, 13;
+  --darker-brown: 98, 77, 56;
+  --even-darker-brown: 55, 43, 31;
+  --even-even-darker-brown: 26, 21, 15;
+  --dark-red: 47, 15, 1;
+  --base-font-size: 62.5%;
+  --max-width: 102.5rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+.default-theme {
+  --text-bg: rgba(var(--ivory-white));
+  --page-bg: rgba(var(--darker-brown));
+  --card-bg: rgba(var(--medium-brown));
+  --card-bg-alt: rgba(var(--dark-brown));
+  --card-drop-shadow: 2px 2px 4px rgba(var(--black), 0.1), 0 2px 8px rgba(var(--black), 0.1);
+  --heading-drop-shadow: 1px 1px rgba(var(--darker-brown), 1), 2px 2px rgba(var(--even-darker-brown), 1), 3px 3px rgba(var(--even-even-darker-brown), 1);
+  --main-nav-bg: rgba(var(--deep-brown), 0.85);
+  --image-card-border: inset 0 0 0 5px rgba(var(--dark-red), .25);
+  --highlight: rgba(var(--vibrant-orange));
+  --link-underline: rgba(var(--soft-yellow));
+  --footer-bg: rgba(var(--burnt-orange), 0.5);
+  --place-preview-bg: rgba(var(--golden-orange), 0.85);
+  --mobile-bg: rgba(var(--even-even-darker-brown), 1);
+}
+
+html,
+body {
+  max-width: 100vw;
+  font-size: var(--base-font-size);
+  display: flex;
+  flex-direction: column;
+  block-size: 100vw;
+}
+
+body {
+  color: var(--text-bg);
+  font-family: var(--font-open-sans), sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+.list {
+  margin-block-end: 4rem;
+}
+
+.list li {
+  margin-block-end: 2rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  html {
+    color-scheme: dark;
+  }
+}

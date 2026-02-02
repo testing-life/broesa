@@ -1,0 +1,32 @@
+.buildingPreview {
+    display: inline-block;
+    position: relative;
+
+    img {
+        width: 100%;
+        height: auto;
+        vertical-align: top;
+    }
+
+    figure:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        box-shadow: var(--image-card-border);
+    }
+
+    a,
+    a:hover,
+    a:focus {
+        position: absolute;
+        inset-block-end: 2rem;
+        inset-inline-start: 2rem;
+        font-size: 1.6rem;
+        border-radius: 100rem;
+        background: var(--highlight);
+        padding: 0.2rem 1.4rem;
+    }
+}

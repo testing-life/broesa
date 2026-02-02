@@ -1,0 +1,8 @@
+.wrapper {
+    max-inline-size: 102.5rem;
+    margin:0 auto 4rem;
+
+    @media (width<50rem) {
+        padding: 0 2rem;
+    }    
+}

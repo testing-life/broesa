@@ -1,0 +1,17 @@
+.title {
+    font-family: var(--font-lora);
+    margin-block-end: 3rem;
+    margin-block-start: 4rem;
+
+    h2 {
+        font-size: 1.8rem;
+        font-weight: 500;
+    }
+
+    @media (width > 50rem) {
+        h2 {
+            font-size: 3.1rem;
+        }
+
+    }
+}

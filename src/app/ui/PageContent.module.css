@@ -1,0 +1,25 @@
+.pageContent {
+    font-family: var(--font-open-sans);
+    font-size: 1.4rem;
+    font-weight: 400;
+
+
+    p {
+        line-height: 1.5;
+        margin-block-end: 2.5rem;
+    }
+
+    p>img {
+        width: 100%
+    }
+
+    p:has(img) {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 2rem;
+
+        @media (width >50rem) {
+            grid-template-columns: 1fr 350px;
+        }
+    }
+}
