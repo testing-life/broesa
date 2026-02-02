@@ -3,7 +3,7 @@ import Link from 'next/link';
 import React from 'react';
 import styles from '@/app/ui/PlaceTeaser.module.css';
 
-const PlaceTeaser = ({ blok }) => {
+const PlaceTeaser = ({ blok }:any) => {
   return (
     <div className={styles.placeTeaser}>
     <Link href={blok.link.cached_url}>

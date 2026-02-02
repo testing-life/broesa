@@ -5,7 +5,7 @@ import EventNews from './EventNews';
 import EventNewsTeaser from './EventNewsTeaser';
 import styles from '@/app/ui/LatestEvents.module.css';
 
-const LatestEvents = async ({ blok }) => {
+const LatestEvents = async () => {
   const { data } = await fetchData();
   console.log(data.stories, data, 'latest events')
   return (

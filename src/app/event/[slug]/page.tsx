@@ -1,7 +1,7 @@
 import { getStoryblokApi } from '@/lib/storyblok';
 import { StoryblokStory } from '@storyblok/react/rsc';
 
-export default async function NewsEvents({ params }) {
+export default async function NewsEvents({ params }: { params: { slug: string } }) {
   const { slug } = await params;
   const { data } = await fetchData(slug);
   console.log(data)

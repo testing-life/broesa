@@ -3,7 +3,7 @@ import { storyblokEditable } from '@storyblok/react/rsc';
 import React, { useEffect, useRef } from 'react';
 import styles from '@/app/ui/HeroImage.module.css';
 
-const HeroImage = ({ blok }) => {
+const HeroImage = ({ blok }:any) => {
   const heroRef = useRef(null);
 
   useEffect(() => {

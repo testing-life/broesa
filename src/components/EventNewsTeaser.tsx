@@ -1,7 +1,7 @@
 import { storyblokEditable } from '@storyblok/react/rsc';
 import styles from '@/app/ui/EventNews.module.css';
 
-const EventNewsTeaser = ({ blok }) => {
+const EventNewsTeaser = ({ blok }:any) => {
   const imagePreview = blok.content?.preview_image?.filename;
   const textPreview = blok.content?.preview_text;
   

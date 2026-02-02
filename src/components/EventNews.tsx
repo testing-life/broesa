@@ -1,6 +1,6 @@
 import { StoryblokComponent } from '@storyblok/react';
 
-const EventNews = ({ blok }) => {
+const EventNews = ({ blok }:any) => {
   return (
     <main>
       {blok.content?.map((nestedBlok: any) => (

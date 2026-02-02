@@ -2,9 +2,9 @@
 import Link from 'next/link';
 import styles from '@/app/ui/Navigation.module.css'
 import { usePathname } from 'next/navigation';
-import { useEffect, useState } from 'react';
+import { ChangeEvent, useEffect, useState } from 'react';
 
-const Navigation = ({ blok }) => {
+const Navigation = ({ blok }:any) => {
   const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
@@ -13,7 +13,7 @@ const Navigation = ({ blok }) => {
     const mediaQuery = window.matchMedia('(width < 50rem)');
     setIsMobile(mediaQuery.matches);
 
-    const handleChange = (e) => {
+    const handleChange = (e:MediaQueryListEvent) => {
       setIsMobile(e.matches);
     };
 
@@ -65,7 +65,7 @@ const Navigation = ({ blok }) => {
               fill="currentColor"
             />
           </svg></button></li>}
-          {blok.map((item) => {
+          {blok.map((item:any) => {
             const current = `/${item.link.cached_url}` === pathname || (item.link.cached_url === 'home' && pathname === '/');
             return (
               <li key={item._uid}>                

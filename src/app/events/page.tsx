@@ -13,7 +13,7 @@ export default async function Home() {
           <h1>Aktuelles</h1>
         </header>
         <ul className='list'>
-          {data?.stories.map((story: unknown) => (
+          {data?.stories.map((story: any) => (
             <li key={story.uuid}>
               <EventNewsTeaser blok={story} />
             </li>

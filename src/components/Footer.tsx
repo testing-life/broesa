@@ -1,6 +1,6 @@
 import styles from '@/app/ui/Footer.module.css'
 
-const Footer = ({ blok }) => {
+const Footer = ({ blok }:any) => {
     return (
         <footer className={styles.footer}>
             <address>
