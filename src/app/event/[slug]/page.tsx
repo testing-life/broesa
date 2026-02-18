@@ -3,8 +3,7 @@ import { StoryblokStory } from '@storyblok/react/rsc';
 
 export default async function NewsEvents({ params }: { params: { slug: string } }) {
   const { slug } = await params;
-  const { data } = await fetchData(slug);
-  console.log(data)
+  const { data } = await fetchData(slug);  
   return (
     <div className='page'>
       <StoryblokStory story={data.story} />

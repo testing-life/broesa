@@ -7,6 +7,7 @@
 
     img {
         max-width: 100%;
+        object-fit: cover;
     }
 
     span {
@@ -24,6 +25,11 @@
 
     .wrapper {
         position: relative;
+        inline-size: 100%;
+        block-size: auto;
+        max-height: 20.6rem;
+        overflow: hidden;
+        display: flex;
 
         &:before {
             content: "";
@@ -32,5 +38,24 @@
             inset: 0;
             z-index: 9;
         }
+    }
+
+ 
+    .link span::after {
+        content: '';
+        position: absolute;
+        inline-size: 100%;
+        block-size: 0.4rem;
+        background: linear-gradient(to right, rgba(var(--soft-yellow), 0.75), rgba(var(--vibrant-orange), 0.75));
+        inset-block-end: 0.5rem;
+        inset-inline-start: 0;
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: transform 0.4s ease-out;
+    }
+
+    .link:hover span::after,
+    .link:focus span::after {
+        transform: scaleX(1);
     }
 }

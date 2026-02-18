@@ -5,7 +5,12 @@
     img {
         width: 100%;
         height: auto;
-        vertical-align: top;
+        object-fit: cover;
+    }
+
+    figure {
+        max-block-size: 20.6rem;
+        display: flex;
     }
 
     figure:before {
@@ -18,15 +23,34 @@
         box-shadow: var(--image-card-border);
     }
 
-    a,
-    a:hover,
-    a:focus {
-        position: absolute;
-        inset-block-end: 2rem;
-        inset-inline-start: 2rem;
+    .link {
         font-size: 1.6rem;
-        border-radius: 100rem;
-        background: var(--highlight);
-        padding: 0.2rem 1.4rem;
+        font-family: var(--font-lora);
+        background: var(--place-preview-bg);
+        padding: 1rem;
+        line-height: 1.6;
+        display: block;
+        position: absolute;
+        inset-block-end: 0;
+        inset-inline: 0;
     }
+
+    .link::after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 0.4rem;
+        background: linear-gradient(to right, rgba(var(--soft-yellow), 0.75), rgba(var(--vibrant-orange), 0.75));
+        bottom: 0.5rem;
+        left: 0;
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: transform 0.4s ease-out;
+    }
+
+    .link:hover::after,
+    .link:focus::after {
+        transform: scaleX(1);
+    }
+
 }

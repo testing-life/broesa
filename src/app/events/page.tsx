@@ -1,13 +1,12 @@
-import EventNews from '@/components/EventNews';
 import EventNewsTeaser from '@/components/EventNewsTeaser';
 import { getStoryblokApi } from '@/lib/storyblok';
-import { StoryblokStory } from '@storyblok/react/rsc';
+import styles from '@/app/page.module.css';
 
 export default async function Home() {
   const { data } = await fetchData();
   
   return (
-    <div className='page events'>
+    <div className={styles.page}>
       <main>
         <header>
           <h1>Aktuelles</h1>
@@ -24,10 +23,12 @@ export default async function Home() {
   );
 }
 
-export async function fetchData() {
+export async function fetchData(page = 1, per_page = 10) {
   const storyblokApi = getStoryblokApi();
   return await storyblokApi.get(`cdn/stories/`, {
     starts_with: 'event/',
     version: 'published',
+    page,
+    per_page
   });
 }

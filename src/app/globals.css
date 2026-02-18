@@ -34,7 +34,7 @@
   --main-nav-bg: rgba(var(--deep-brown), 0.85);
   --image-card-border: inset 0 0 0 5px rgba(var(--dark-red), .25);
   --highlight: rgba(var(--vibrant-orange));
-  --link-underline: rgba(var(--soft-yellow));
+  --link-underline: rgba(var(--soft-yellow));  
   --footer-bg: rgba(var(--burnt-orange), 0.5);
   --place-preview-bg: rgba(var(--golden-orange), 0.85);
   --mobile-bg: rgba(var(--even-even-darker-brown), 1);

@@ -14,6 +14,8 @@ import BuildingPreview from '@/components/BuildingPreview';
 import Grid from '@/components/Grid';
 import HomeHeroImg from '@/components/HomeHeroImage';
 import PlaceTeasers from '@/components/PlaceTeasers';
+import Column from '@/components/Column';
+import MainTitle from '@/components/MainTitle';
 
 export const getStoryblokApi = storyblokInit({
   accessToken: process.env.NEXT_PUBLIC_STORYBLOK_CONTENT_API_ACCESS_TOKEN,
@@ -24,6 +26,7 @@ export const getStoryblokApi = storyblokInit({
   components: {
     page: Page,
     title: Title,
+    'main-title': MainTitle,
     grid: Grid,    
     paragraph: Paragraph,
     'article-image': ArticleImage,
@@ -37,5 +40,6 @@ export const getStoryblokApi = storyblokInit({
     'page-content': PageContent,
     'home-hero-image': HomeHeroImg,
     footer: Footer,
+    column: Column
   },
 });

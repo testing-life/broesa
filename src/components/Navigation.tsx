@@ -2,9 +2,9 @@
 import Link from 'next/link';
 import styles from '@/app/ui/Navigation.module.css'
 import { usePathname } from 'next/navigation';
-import { ChangeEvent, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 
-const Navigation = ({ blok }:any) => {
+const Navigation = ({ blok }: any) => {
   const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
@@ -13,7 +13,7 @@ const Navigation = ({ blok }:any) => {
     const mediaQuery = window.matchMedia('(width < 50rem)');
     setIsMobile(mediaQuery.matches);
 
-    const handleChange = (e:MediaQueryListEvent) => {
+    const handleChange = (e: MediaQueryListEvent) => {
       setIsMobile(e.matches);
     };
 
@@ -23,10 +23,10 @@ const Navigation = ({ blok }:any) => {
       mediaQuery.removeEventListener('change', handleChange);
     };
   }, []);
-  
-  console.log(isMobile)
+
   return (
     <nav className={`${styles.navigation} ${isOpen ? styles.isOpen : ''}`} >
+      {isMobile && isOpen && <div className={styles.backdrop}></div>}
       <div>
         <Link className={styles.logo} href='/'>
           <img src='https://s1.qwant.com/thumbr/128x128/3/6/41e424a7584f24f045d4d8fc34ef848a33ade521e26f67baad76bc7731ccac/OIP.WSGS5oHda5jzK_WkvkJUjwAAAA.jpg?u=https%3A%2F%2Ftse.mm.bing.net%2Fth%2Fid%2FOIP.WSGS5oHda5jzK_WkvkJUjwAAAA%3Fpid%3DApi&q=0&b=1&p=0&a=0' alt='' />
@@ -65,11 +65,12 @@ const Navigation = ({ blok }:any) => {
               fill="currentColor"
             />
           </svg></button></li>}
-          {blok.map((item:any) => {
+          {blok.map((item: any) => {
             const current = `/${item.link.cached_url}` === pathname || (item.link.cached_url === 'home' && pathname === '/');
             return (
-              <li key={item._uid}>                
-                <Link className={current ? styles['current-link'] : ''} href={item.link.cached_url === 'home' ? '/' : `/${item.link.cached_url}`}>{item.label}</Link>
+              <li key={item._uid}>
+                <Link onNavigate={() => setIsOpen(false)}
+                  className={current ? styles['current-link'] : ''} href={item.link.cached_url === 'home' ? '/' : `/${item.link.cached_url}`}>{item.label}</Link>
               </li>
             )
           })}
