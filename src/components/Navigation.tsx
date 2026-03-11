@@ -31,7 +31,7 @@ const Navigation = ({ blok }: any) => {
         <Link className={styles.logo} href='/'>
           <img src='https://s1.qwant.com/thumbr/128x128/3/6/41e424a7584f24f045d4d8fc34ef848a33ade521e26f67baad76bc7731ccac/OIP.WSGS5oHda5jzK_WkvkJUjwAAAA.jpg?u=https%3A%2F%2Ftse.mm.bing.net%2Fth%2Fid%2FOIP.WSGS5oHda5jzK_WkvkJUjwAAAA%3Fpid%3DApi&q=0&b=1&p=0&a=0' alt='' />
         </Link>
-        {isMobile && <li><button className={styles.iconBtn} onClick={() => setIsOpen(true)}>
+        {isMobile && <button className={styles.iconBtn} onClick={() => setIsOpen(true)}>
           <svg
             width="24"
             height="24"
@@ -51,7 +51,7 @@ const Navigation = ({ blok }: any) => {
               d="M3 17.0645C2.44772 17.0645 2 17.5122 2 18.0645C2 18.6167 2.44772 19.0645 3 19.0645H21C21.5523 19.0645 22 18.6167 22 18.0645C22 17.5122 21.5523 17.0645 21 17.0645H3Z"
               fill="currentColor"
             />
-          </svg></button></li>}
+          </svg></button>}
         <ul>
           {isMobile && <li><button className={styles.iconBtn} onClick={() => setIsOpen(false)}><svg
             width="24"
