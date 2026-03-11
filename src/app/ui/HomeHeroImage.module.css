@@ -5,6 +5,7 @@
     align-self: center;
     background-repeat: no-repeat;
     background-size: cover;    
+    background-position-y: center;
     align-items: center;
     justify-content: center;
     position: relative;

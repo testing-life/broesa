@@ -41,19 +41,56 @@
 
     .iconBtn {
         background: transparent;
-        border: none;
-        color: var(--text-bg);
-        padding: 1rem;        
+        border: none;        
+        padding: 1rem;
     }
 
     ul {
         display: flex;
-        gap: 30px;
+        gap: 3rem;
+    }
+
+    li {
+        position: relative;
+        overflow: hidden;
+        transition: .3s;
+        padding: 0.5rem 0;
+
+
+        &:before {
+            content: "";
+            position: absolute;
+            inset: calc(100% - 0.3rem) 0 0 0;
+            background: var(--highlight);            
+            scale: 0 1;
+            transition: .3s, translate 0s .3s;
+        }
+    }
+
+    li:has(a:hover):before,
+    li:has(a:focus):before,
+    li:has(.current-link):before     {
+        scale: 1;
+    }
+
+    li:hover:before {
+        translate: 0;
+        transition: .3s;
+    }
+
+    ul:hover li:has(~ li:hover):before {
+        translate: 100% 0;
+        transition: .2s .2s, scale 0s .4s;
+    }
+
+    ul:hover li:hover~li:before {
+        translate: -100% 0;
+        transition: .2s .2s, scale 0s .4s;
     }
 
     .backdrop {
         position: absolute;
-        background: rgba(0,0,0,0.75);
+        background: rgba(0, 0, 0, 0.75);
         width: 100%;
         height: 100vh;
         top: 0;
@@ -63,13 +100,12 @@
 
     a {
         padding: 0.2rem 1.4rem;
+        color: rgba(from var(--text-bg) r g b / 85%);
     }
 
     .current-link,
     a:hover,
     a:focus {
-        border-radius: 100rem;
-        background: var(--highlight);
-        padding: 0.2rem 1.4rem;
+        color: var(--text-bg);
     }
 }

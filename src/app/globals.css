@@ -35,6 +35,9 @@
   --image-card-border: inset 0 0 0 5px rgba(var(--dark-red), .25);
   --highlight: rgba(var(--vibrant-orange));
   --link-underline: rgba(var(--soft-yellow));  
+  --button-bg: rgba(var(--soft-yellow));  
+  --button-text: rgba(var(--even-darker-brown));  
+  --button-hover-bg: rgba(var(--golden-orange));  
   --footer-bg: rgba(var(--burnt-orange), 0.5);
   --place-preview-bg: rgba(var(--golden-orange), 0.85);
   --mobile-bg: rgba(var(--even-even-darker-brown), 1);

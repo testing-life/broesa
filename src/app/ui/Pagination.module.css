@@ -1,0 +1,30 @@
+.pagination {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    align-items: center;
+
+    button {
+        border: none;
+        background: var(--button-bg);
+        color: var(--button-text);
+        font-size: 1.5rem;
+        font-weight: 500;  
+        padding: .75rem 1rem .5rem;
+        line-height: 1;
+        border-radius: 100px;
+    }
+
+    button:disabled {
+        opacity: 0.5;
+    }
+
+    .active button,
+    button:not([disabled]):hover,
+    button:not([disabled]):focus {
+        box-shadow:0 0 0 0.5rem var(--button-hover-bg);
+        text-decoration: underline;
+        cursor: pointer;
+        outline: none;
+    }
+}

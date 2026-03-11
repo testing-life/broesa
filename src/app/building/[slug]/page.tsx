@@ -1,6 +1,5 @@
 import { getStoryblokApi } from '@/lib/storyblok';
 import { StoryblokStory } from '@storyblok/react/rsc';
-import styles from '@/app/ui/BuildingsPage.module.css';
 
 export default async function Building({ params }: { params: { slug: string } }) {
   const { slug } = await params;

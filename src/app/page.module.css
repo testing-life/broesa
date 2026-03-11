@@ -1,11 +1,13 @@
 
-.page header {
-  padding: 0 2rem;
+.page header {  
   margin-block-end: 1rem;
 }
 
 .page main {
   margin-block-end: 5rem;
+  padding: 0 2rem;
+  display: block;
+  min-height: 100vh;
 }
 
 @media screen and (width > 50rem) {

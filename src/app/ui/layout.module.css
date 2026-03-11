@@ -3,7 +3,7 @@
     height: 100%;
     min-height: 100vh;
 
-    main>header~* {
+    main>header~*:not(.list) {
         max-inline-size: 102.5rem;
         margin: 0 auto;
         padding: 0 2rem;
