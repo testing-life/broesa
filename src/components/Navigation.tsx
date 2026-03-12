@@ -9,6 +9,19 @@ const Navigation = ({ blok }: any) => {
   const [isOpen, setIsOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
 
+  const handleKeyDown = (e: KeyboardEvent) => {
+    if (e.key === 'Escape') {
+      setIsOpen(false);
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener('keydown', handleKeyDown as EventListener);
+    return () => {
+      document.removeEventListener('keydown', handleKeyDown as EventListener);
+    };
+  }, []);
+
   useEffect(() => {
     const mediaQuery = window.matchMedia('(width < 50rem)');
     setIsMobile(mediaQuery.matches);

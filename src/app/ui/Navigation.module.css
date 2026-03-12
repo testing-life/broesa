@@ -4,9 +4,11 @@
     font-weight: 600;
     font-size: 2rem;
     padding: 2.1rem 0;
+    z-index: 999;    
 
     &.isOpen {
         --ulPositionRight: 0;
+        pointer-events: all;
     }
 
     .logo,

@@ -5,8 +5,7 @@
 
     main>header~*:not(.list) {
         max-inline-size: 102.5rem;
-        margin: 0 auto;
-        padding: 0 2rem;
+        margin: 0 auto;        
 
         @media (width > 50rem) {
             padding: 0;

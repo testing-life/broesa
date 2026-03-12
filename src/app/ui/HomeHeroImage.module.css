@@ -8,6 +8,7 @@
     background-position-y: center;
     align-items: center;
     justify-content: center;
+    margin: 0 0 0 -2rem;
     position: relative;
     background-image: var(--hero-bg);
     width: 100vw;

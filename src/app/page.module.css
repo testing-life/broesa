@@ -1,6 +1,6 @@
 
 .page header {  
-  margin-block-end: 1rem;
+  margin-block-end: 1rem;  
 }
 
 .page main {
@@ -12,7 +12,7 @@
 
 @media screen and (width > 50rem) {
   .page header {
-    margin-block-end: 4rem;
+    margin-block-end: 4rem;    
   }
 }
 
