@@ -108,6 +108,8 @@
     a {
         padding: 0.2rem 1.4rem;
         color: rgba(from var(--text-bg) r g b / 85%);
+        display: inline-block;
+        width: 100%;
     }
 
     .current-link,
