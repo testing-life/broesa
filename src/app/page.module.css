@@ -8,6 +8,10 @@
   padding: 0 2rem;
   display: block;
   min-height: 100vh;
+
+  header {
+    margin-left: -2rem;
+  }
 }
 
 @media screen and (width > 50rem) {
