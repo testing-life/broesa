@@ -19,7 +19,7 @@ interface DataResult {
 export default function Home() {
   const [currentPage, setCurrentPage] = useState(1);
   const [pageData, setPageData] = useState<DataResult & TotalPages>();
-  const [pageHeaderData, setPageHeaderData] = useState();
+  const [pageHeaderData, setPageHeaderData] = useState<{ story: { content: { body: any[] } } }>();
 
   useEffect(() => {
     const fetchDataInHook = async () => {
@@ -38,17 +38,20 @@ export default function Home() {
 
   return (
     <div className={styles.page}>
-      <main>
-      {pageHeaderData && <HeroImage blok={pageHeaderData?.story.content.body[0]} />}
-      <ul className='list'>
-        {pageData?.data?.stories.map((story: any) => (
-          <li key={story.uuid}>
-            <EventNewsTeaser blok={story} />
-          </li>
-        ))}
-      </ul>
-      <Pagination nextPageHandler={() => setCurrentPage(currentPage + 1)} pageChangeHandler={(page: number) => setCurrentPage(page)} prevPageHandler={() => setCurrentPage(currentPage - 1)} currentPage={currentPage} totalPages={pageData?.totalPages} />
-</main>
+      <main>        
+        {pageHeaderData && <HeroImage blok={pageHeaderData.story.content.body[0]} />}
+        {!pageData?.data?.stories.length && <div className={styles.error}>
+          <p>Keine Seiten gefunden</p>
+        </div>}
+        <ul className='list'>
+          {pageData?.data?.stories.map((story: any) => (
+            <li key={story.uuid}>
+              <EventNewsTeaser blok={story} />
+            </li>
+          ))}
+        </ul>
+        <Pagination nextPageHandler={() => setCurrentPage(currentPage + 1)} pageChangeHandler={(page: number) => setCurrentPage(page)} prevPageHandler={() => setCurrentPage(currentPage - 1)} currentPage={currentPage} totalPages={pageData?.totalPages} />
+      </main>
     </div>
   );
 }
